@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+
+* {
+
+    font-family: Lexend;
+
+
+    padding: 0;
+
+
+    margin: 0;
+    border-radius: 10px;
+
+    background-color: black;
+}
+
+
+.title-bar {
+
+    min-height: 8vh;
+    min-width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 2px solid #ffdd00;
+    color: #ffdd00;
+}
+
+/* Inputs: */
+.inputs {
+   
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+   
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+   
+    height: 75%;
+    width: 50%;
+    color: #ffdd00;
+
+    
+    
+}
+
+
+label {
+   
+    font-size: 20px;
+    color: #ffdd00;
+    transition: 0.5s;
+}
+
+input {
+   
+    width: 40%;
+
+    background-color: aliceblue;
+    border-width: 3px;
+    padding: 1.1%;
+    transition: 0.5s;
+    
+}
+
+input:hover {
+   
+    width: 40%;
+
+    background-color: rgba(240, 248, 255, 0.753);
+    border-width: 3px;
+    padding: 1.1%;
+    
+}
+.calculate-button, .reset-button{
+    padding: 20px;
+    background-color: #ffdd00;
+    border-width: 3px;
+    color: black;
+    transition: 0.5s;
+    margin: 1%;
+}
+
+.calculate-button:hover, .reset-button:hover{
+    padding: 20px;
+    background-color: #e6c700;
+    border-width: 3px;
+    color: black;
+    transition: 0.5s;
+
+}
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8" lang="en">
+
+        <link rel="stylesheet" href="main.css">
+
+        <title>Calculator</title>
+    </head>
+
+    <body>
+
+        <div class="title-bar">
+            <h1>Modulink Calculator</h1>
+        </div>
+
+        <div class="inputs">
+            <h2 id="points">Points: 0</h2>
+            <br>
+
+            
+                
+            <label for="modu-tower-bottom">ModuTower Bottom:</label>
+            <input type="text" id="modu-tower-bottom">
+            <br>
+
+            <label for="modu-tower-middle">ModuTower Middle:</label>
+            <input type="text" id="modu-tower-middle">
+            <br>
+            
+            <label for="modu-tower-top">ModuTower Top:</label>
+            <input type="text" id="modu-tower-top">
+            <br>
+
+            <label for="modu-tower-cubes">ModuTower Cubes:</label>
+            <input type="text" id="modu-tower-cubes">
+            <br>
+
+            <label for="square-area-modu-cubes">Square Area ModuCubes:</label>
+            <input type="text" id="square-area-modu-cubes">
+            <br>
+
+            <label for="modu-wheel">ModuWheel:</label>
+            <input type="text" id="modu-wheel">
+            <br>
+
+            <label for="parking">Parking:</label>
+            <input type="text" id="parking">
+            <br>
+
+            <label for="penalty">Penalty:</label>
+            <input type="text" id="penalty">
+            <br>
+
+            <label for="blue-cube">Blue Cube (20, 40, 60):</label>
+            <input type="text" id="blue-cube">
+            <br>
+
+
+            <button class="calculate-button" id="calculate-button">Calculate</button>
+            
+            <button class="reset-button" id="reset-button"> 
+                Reset
+            </button> 
+
+            </body> 
+        </div>
+
+        <script>
+            document.getElementById("calculate-button").onclick = function(event)
+            {
+                
+                let total = 0;
+                let ids = ["modu-tower-cubes", "parking", "blue-cube"];
+                
+                
+                
+
+                for (let i = 0; i < ids.length; i++)
+                {
+                    total += parseInt(document.getElementById(ids[i]).value) || 0;
+                }
+
+
+                total += (parseInt(document.getElementById("modu-tower-bottom").value) || 0) * 10;
+                total += (parseInt(document.getElementById("modu-tower-middle").value) || 0) * 20;
+                total += (parseInt(document.getElementById("modu-tower-top").value) || 0) * 30;
+                total += (parseInt(document.getElementById("square-area-modu-cubes").value) || 0) * 5;
+                total += (parseInt(document.getElementById("modu-wheel").value) || 0) * 15;
+                
+
+
+                total -= parseInt(document.getElementById("penalty").value) || 0;
+
+
+                document.getElementById("points").innerHTML = "Points: ".concat(total.toString())
+            }
+
+
+            document.getElementById('reset-button').onclick = function(event)
+            {
+                let ids = ["modu-tower-cubes", "penalty",  "modu-tower-bottom", "modu-tower-middle", "modu-tower-top", "square-area-modu-cubes", "modu-wheel", "parking", "blue-cube"];
+                
+                for (let i = 0; i < ids.length; i++)
+                {
+                    document.getElementById(ids[i]).value = '';
+                }
+                document.getElementById("points").innerHTML = "Points: 0";
+            }
+        </script>
+
+
+    </body>
+</html>
